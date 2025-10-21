@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DocenteHome } from './pages/docente-home/docente-home';
+import { AdminPage } from './pages/admin-page/admin-page';
 import { WelcomePage } from './pages/welcome-page/welcome-page';
 export const routes: Routes = [
   {
@@ -7,7 +7,7 @@ export const routes: Routes = [
     component : WelcomePage
   },
   {
-    path : "home/docente",
-    component : DocenteHome
+    path : "admin/home",
+    component : AdminPage
   }
-];
+]
