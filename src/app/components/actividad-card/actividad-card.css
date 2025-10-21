@@ -2,9 +2,10 @@
 .actividad-card {
   display: flex; flex-direction: column;
   align-items: center;
-  width: 300px;
   background-color: #fff;
   border-radius: 15px;
+  width: fit-content;
+  height: fit-content;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin: 1rem;
@@ -18,13 +19,9 @@
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* Imagen que se ajusta al tamaño del contenedor */
-.actividad-img {
-  width: 10px;
-  height: 10px;
-  object-fit: cover;       
-  border-radius: 0;        
-  
+img{
+  height: 300px;
+  width: 300px;
 }
 
 /* Texto */

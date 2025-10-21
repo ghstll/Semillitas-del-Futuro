@@ -1,0 +1,54 @@
+<div class="main-layout">
+    <!-- Content Area (sin menú lateral) -->
+    <div class="content-area" style="width:100%;">
+        <!-- User Menu -->
+        <div class="user-menu-container">
+            <div class="user-profile" (click)="logout()">
+                <span class="user-name">ray   </span>
+                <div class="user-avatar">
+                    R
+                </div>
+                <span class="dropdown-icon">▼</span>
+            </div>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu">
+                <div class="dropdown-item">Perfil</div>
+                <div class="dropdown-item logout" (click)="logout()">Cerrar Sesión</div>
+            </div>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="progress-card">
+            <div class="card-header">
+                <span class="icon">👋</span> Bienvenido al Panel Docente
+            </div>
+            
+            <div class="welcome-content">
+                <div class="section-title">Módulos Disponibles:</div>
+                
+                <div class="modules-grid">
+                    <!-- Módulo Agua -->
+                    <div class="module-card" routerLink="/docente/avance-agua">
+                        <div class="module-icon">💧</div>
+                        <h3>Avance del Módulo Agua</h3>
+                        <p>Seguimiento y evaluación del progreso en el módulo de agua.</p>
+                    </div>
+
+                    <!-- Módulo Reciclaje -->
+                    <div class="module-card" routerLink="/docente/avance-reciclaje">
+                        <div class="module-icon">♻️</div>
+                        <h3>Avance del Módulo Reciclaje</h3>
+                        <p>Seguimiento y evaluación del progreso en el módulo de reciclaje.</p>
+                    </div>
+                    
+                    <!-- Temario Agua -->
+                    <div class="module-card" routerLink="/docente/temario-agua">
+                        <div class="module-icon">📚</div>
+                        <h3>Temario - Módulo Agua</h3>
+                        <p>Ver el temario y la duración estimada por sección.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

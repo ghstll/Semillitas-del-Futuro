@@ -1,0 +1,44 @@
+<div class="main-layout">
+  <aside class="sidebar">
+    <h2>TEMAS</h2>
+    <div class="sidebar-item">Reciclaje</div>
+    <div class="sidebar-item active"><a routerLink="/docente/temario-agua">Temario Agua</a></div>
+
+    <h2>AVANCE</h2>
+    <div class="sidebar-item"><a routerLink="/docente/avance-reciclaje">Avance Reciclaje</a></div>
+    <div class="sidebar-item"><a routerLink="/docente/avance-agua">Avance Agua</a></div>
+    
+  </aside>
+
+  <main class="content-area">
+    <div class="user-menu-container">
+      <div class="user-profile">
+        <span class="user-name">ray</span>
+        <span class="user-avatar">r</span>
+        <span class="dropdown-icon">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <a href="/login" class="dropdown-item logout">Cerrar Sesión</a>
+      </div>
+    </div>
+
+    <div class="progress-card">
+      <div class="card-header">
+        <span class="icon">📚</span> Temario - Módulo Agua
+      </div>
+
+      <div class="welcome-content">
+        <p class="intro">Aquí encontrarás las secciones del módulo y su duración estimada.</p>
+
+        <ul class="temario-list">
+          <li *ngFor="let item of temario">
+            <div class="temario-item">
+              <div class="titulo">{{item.titulo}}</div>
+              <div class="duracion">{{item.duracion}}</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</div>

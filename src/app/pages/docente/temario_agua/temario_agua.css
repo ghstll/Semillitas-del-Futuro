@@ -1,0 +1,279 @@
+/*
+ * Hoja de estilos CSS para la interfaz de Temario Agua.
+ * Asegurando que los estilos de sidebar y hover del usuario funcionen correctamente
+ * y adaptando el contenido principal (Temario) al formato de lista.
+ */
+
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f9fc; /* Fondo muy claro y limpio */
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL SIDEBAR (Menú lateral oscuro) */
+/* -------------------------------------- */
+.sidebar {
+    width: 250px; 
+    background-color: #1f2a37; /* Gris oscuro profundo para profesionalismo */
+    color: white;
+    padding: 30px 0 20px 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+    font-size: 1rem;
+    padding: 0 25px 15px;
+    color: #a0a7b4; /* Gris suave para títulos de sección */
+    border-bottom: 1px solid #2e3b4d;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sidebar-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.95rem;
+}
+
+.sidebar-item:hover {
+    background-color: #2e3b4d; /* Un gris oscuro al pasar el ratón */
+    color: #ffffff;
+}
+
+.sidebar-item.active {
+    background-color: #007bff; /* Azul primario limpio */
+    font-weight: 600;
+    border-left: 5px solid #00c7e5; /* Barra lateral de acento cian */
+    padding-left: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* -------------------------------------- */
+/* CORRECCIÓN: Estilos para enlaces en Sidebar (Eliminar Subrayado) */
+/* -------------------------------------- */
+/* Aplica a los enlaces dentro de cualquier sidebar-item */
+.sidebar-item a {
+    color: inherit;
+    text-decoration: none; /* ELIMINA EL SUBRAYADO */
+    display: block; /* Hace que el enlace ocupe todo el espacio del item */
+}
+
+.sidebar-item a:hover,
+.sidebar-item a:focus,
+.sidebar-item a:active {
+    text-decoration: none;
+}
+
+/* Para el item que no es enlace (como "Reciclaje" en tu HTML) */
+.sidebar-item:not(.active) {
+    color: #a0a7b4; /* Color por defecto más suave */
+}
+
+
+/* -------------------------------------- */
+/* ESTILO DEL CONTENIDO PRINCIPAL */
+/* -------------------------------------- */
+.content-area {
+    flex-grow: 1; 
+    padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: relative; 
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL MENÚ DE USUARIO/DOCENTE (Hover y Desplegable) */
+/* -------------------------------------- */
+.user-menu-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 25px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #e0e0e0; 
+}
+
+.user-profile:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px); 
+}
+
+.user-name {
+    font-weight: 500; 
+    color: #333;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.user-avatar {
+    background-color: #5c677d; 
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: 2px solid #ffffff; 
+}
+
+.dropdown-icon {
+    font-size: 0.6rem;
+    color: #888;
+    margin-left: 8px;
+    transition: transform 0.2s;
+}
+
+/* Menú Desplegable (Oculto por defecto) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: white;
+    border-radius: 10px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 200px;
+    margin-top: 10px;
+    overflow: hidden;
+    display: none; /* CORRECCIÓN CLAVE: Oculto para ser activado por el hover */
+    border: 1px solid #f0f0f0;
+}
+
+/* ACTIVACIÓN POR HOVER: Muestra el menú al pasar el ratón */
+.user-menu-container:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #444;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    text-decoration: none; /* Asegura que el enlace "Cerrar Sesión" no se subraye */
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #eaf1fb; 
+    color: #007bff;
+}
+
+.dropdown-item.logout {
+    color: #d9534f; 
+    border-top: 1px solid #eee;
+    font-weight: 500;
+}
+
+.dropdown-item.logout:hover {
+    background-color: #fef7f7;
+    font-weight: 600;
+}
+
+/* -------------------------------------- */
+/* ESTILO DE LA TARJETA PRINCIPAL (Temario) */
+/* -------------------------------------- */
+.progress-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 950px; 
+    overflow: hidden;
+    margin-top: 80px; 
+}
+
+/* Encabezado Temario Agua */
+.card-header {
+    background-color: #3498db; /* Azul corporativo */
+    padding: 20px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: white;
+    border-bottom: 5px solid #2ecc71; /* Verde esmeralda de acento */
+    letter-spacing: 1px;
+}
+
+.card-header .icon {
+    margin-right: 15px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL CONTENIDO DEL TEMARIO (Lista) */
+/* -------------------------------------- */
+.welcome-content {
+    padding: 30px;
+}
+
+.intro {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.temario-list {
+    list-style: none; /* Quita los puntos de la lista por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.temario-list li {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+    transition: background-color 0.2s;
+}
+
+.temario-list li:last-child {
+    border-bottom: none;
+}
+
+.temario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.temario-item:hover {
+    color: #007bff;
+}
+
+.titulo {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.duracion {
+    font-weight: 600;
+    color: #5c677d; /* Gris azulado para la duración */
+    min-width: 80px;
+    text-align: right;
+    background-color: #f7f9fc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+

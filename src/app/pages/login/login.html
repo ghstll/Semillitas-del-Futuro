@@ -1,0 +1,34 @@
+<section class="login-container">
+  <h2 *ngIf="!esVistaRegistro">Iniciar sesión</h2>
+  <h2 *ngIf="esVistaRegistro">Registrar nuevo usuario</h2>
+
+  <form>
+    <label>
+      Usuario (Nombre o Email)
+      <input type="text" [(ngModel)]="usuario" name="usuario" required />
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" [(ngModel)]="clave" name="clave" required />
+    </label>
+
+    <label *ngIf="esVistaRegistro">
+      Seleccionar Rol
+      <select [(ngModel)]="rolSeleccionado" name="rolSeleccionado" required>
+        <option value="administrador">Administrador</option>
+        <option value="docente">Docente</option>
+        <option value="alumno">Alumno</option>
+      </select>
+    </label>
+
+    <button type="button" class="auth-button" (click)="handleAccion()">
+      {{ esVistaRegistro ? 'Registrar y Generar Usuario' : 'Entrar' }}
+    </button>
+  </form>
+
+  <p class="toggle-link" (click)="toggleVista()">
+    {{ esVistaRegistro ? '¿Ya tienes cuenta? Inicia sesión' : '¿Eres nuevo? Regístrate aquí' }}
+  </p>
+
+</section>

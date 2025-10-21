@@ -1,0 +1,81 @@
+/* login.css - Diseño con temática de cuidado del medio ambiente */
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #F8F8F8; /* Fondo claro general */
+}
+
+.login-container {
+  max-width: 400px;
+  width: 90%;
+  padding: 2.5rem;
+  background-color: #FFFFFF; /* Fondo blanco del formulario */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #2E8B57; /* Verde Bosque (Forest Green) */
+  font-size: 1.8rem;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-container label {
+  display: block;
+  text-align: left;
+  color: #4A4A4A; /* Gris oscuro para el texto */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.login-container input,
+.login-container select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #D3D3D3; /* Gris claro */
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.login-container input:focus,
+.login-container select:focus {
+  border-color: #5CB85C; /* Verde brillante al enfocar */
+  outline: none;
+}
+
+.auth-button {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #5CB85C; /* Verde principal para el botón */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+  background-color: #4CAF50; /* Verde más oscuro al pasar el ratón */
+}
+
+.toggle-link {
+  margin-top: 1.5rem;
+  color: #6B8E23; /* Tono verde oliva/tierra */
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}

@@ -1,0 +1,270 @@
+.main-layout {
+	display: flex;
+	min-height: 100vh;
+	background-color: #f7f9fc; /* Fondo muy claro y limpio */
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL SIDEBAR (Menú lateral oscuro) */
+/* -------------------------------------- */
+.sidebar {
+	width: 250px; 
+	background-color: #1f2a37; /* Gris oscuro profundo para profesionalismo */
+	color: white;
+	padding: 30px 0 20px 0; /* Más padding superior */
+	box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h2 {
+	font-size: 1rem;
+	padding: 0 25px 15px;
+	color: #a0a7b4; /* Gris suave para títulos de sección */
+	border-bottom: 1px solid #2e3b4d;
+	margin-bottom: 15px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.sidebar-item {
+	padding: 12px 25px;
+	cursor: pointer;
+	transition: background-color 0.2s, color 0.2s;
+	font-size: 0.95rem;
+}
+
+.sidebar-item:hover {
+	background-color: #2e3b4d; /* Un gris oscuro al pasar el ratón */
+	color: #ffffff;
+}
+
+.sidebar-item.active {
+	background-color: #007bff; /* Azul primario limpio */
+	font-weight: 600;
+	border-left: 5px solid #00c7e5; /* Barra lateral de acento cian */
+	padding-left: 20px;
+	box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.3); /* Sombra interna sutil */
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL CONTENIDO PRINCIPAL */
+/* -------------------------------------- */
+.content-area {
+	flex-grow: 1; 
+	padding: 30px; /* Menos padding general */
+	display: flex;
+	flex-direction: column; 
+	align-items: center; 
+	position: relative; 
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL MENÚ DE USUARIO/DOCENTE (Mejorado) */
+/* -------------------------------------- */
+.user-menu-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+.user-profile {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	padding: 8px 15px;
+	border-radius: 25px; /* Más redondo */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s ease-in-out;
+	border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+.user-profile:hover {
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	transform: translateY(-1px); /* Efecto de elevación */
+}
+
+.user-name {
+	font-weight: 500; /* Más delgado */
+	color: #333;
+	margin-right: 10px;
+	font-size: 0.9rem;
+}
+
+.user-avatar {
+	background-color: #5c677d; /* Gris azulado profesional */
+	color: white;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 0.9rem;
+	font-weight: 700;
+	border: 2px solid #ffffff; /* Borde interior blanco */
+}
+
+.dropdown-icon {
+	font-size: 0.6rem;
+	color: #888;
+	margin-left: 8px;
+	transition: transform 0.2s;
+}
+
+/* Menú Desplegable */
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background-color: white;
+	border-radius: 10px; /* Bordes más suaves */
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	width: 200px;
+	margin-top: 10px;
+	overflow: hidden;
+	/* Mostrar solo al pasar el ratón */
+	display: none;
+	border: 1px solid #f0f0f0;
+}
+
+.dropdown-item {
+	padding: 12px 20px;
+	font-size: 0.9rem;
+	color: #444;
+	transition: background-color 0.2s;
+	cursor: pointer;
+}
+
+.dropdown-item:hover {
+	background-color: #eaf1fb; /* Azul muy suave al pasar el ratón */
+	color: #007bff;
+}
+
+.dropdown-item.logout {
+	color: #d9534f; /* Rojo más suave y elegante */
+	border-top: 1px solid #eee;
+	font-weight: 500;
+}
+
+.dropdown-item.logout:hover {
+	background-color: #fef7f7;
+	font-weight: 600;
+}
+
+/* -------------------------------------- */
+/* ESTILO DEL MENÚ DE USUARIO/DOCENTE */
+/* -------------------------------------- */
+.user-menu-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Menú Desplegable: OCULTO por defecto */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* ... (resto de estilos del menú) ... */
+    display: none; /* Debe estar oculto */
+    /* ... (resto de estilos del menú) ... */
+}
+
+/* REGLA DE ACTIVACIÓN CORREGIDA:
+   Asegura que el menú se muestre mientras el ratón esté sobre CUALQUIER PARTE
+   del contenedor principal del menú (user-menu-container).
+   Esto incluye el perfil, el avatar y el menú desplegable. */
+.user-menu-container:hover .dropdown-menu {
+    display: block;
+}
+/* Evitar subrayado en enlaces del sidebar y mantener color heredado */
+.sidebar-item a {
+	color: inherit;
+	text-decoration: none;
+	display: block;
+}
+.sidebar-item a:hover,
+.sidebar-item a:focus,
+.sidebar-item a:active {
+	text-decoration: none;
+}
+
+/* -------------------------------------- */
+/* ESTILO DE LA TARJETA PRINCIPAL (Modernizado) */
+/* -------------------------------------- */
+.progress-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra elegante y difusa */
+	width: 100%;
+	max-width: 950px; 
+	overflow: hidden;
+	margin-top: 80px; /* Espacio para el menú de usuario */
+}
+
+/* Encabezado temático de la tarjeta */
+.card-header {
+	background-color: #3498db; /* Azul corporativo vibrante */
+	padding: 20px;
+	text-align: center;
+	font-size: 1.7rem;
+	font-weight: 700;
+	color: white;
+	border-bottom: 5px solid #2ecc71; /* Verde esmeralda de acento */
+	letter-spacing: 1px;
+}
+
+.card-header .icon {
+	margin-right: 15px;
+	font-size: 2rem;
+	color: #ffffff;
+}
+
+/* -------------------------------------- */
+/* ESTILO DE LA TABLA (Limpio y legible) */
+/* -------------------------------------- */
+.progress-table {
+	width: 100%;
+	border-collapse: collapse; 
+	table-layout: fixed;
+}
+
+.progress-table th, .progress-table td {
+	padding: 16px 20px; 
+	text-align: left;
+	border-bottom: 1px solid #f0f0f0; /* Líneas divisorias muy suaves */
+}
+
+.progress-table th {
+	background-color: #f9fbfc; /* Fondo casi blanco para encabezados */
+	color: #555;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	letter-spacing: 0.8px;
+}
+
+/* Estilos de las filas */
+.progress-table tr:nth-child(even) {
+	background-color: #ffffff;
+}
+
+.progress-table tr:hover {
+	background-color: #f0f8ff; /* Azul cielo muy claro al pasar el ratón */
+	cursor: default;
+}
+
+/* Estilo para la columna de estado completado (Chip de estatus) */
+.status-completed {
+	font-weight: 600;
+	color: #27ae60; /* Verde de éxito fuerte */
+	background-color: #eafaf1; /* Fondo muy suave y limpio */
+	border-radius: 6px;
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 0.85rem;
+}
