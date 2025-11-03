@@ -1,0 +1,35 @@
+<aside>
+  <div class="containers-divisors-sections-aside-menu">
+    <header>
+      <div style="display: inline-flex; align-items: center">
+        <h1 style="font-size: 20px">Semillitas del futuro</h1>
+      </div>
+    </header>
+    <div class="divisor-content"></div>
+    <section class="btns-section-container">
+      @for(button of buttons; track button){
+        <button class="button-aside-menu" (click) = "buttonOnClick(button)">
+          <ng-container *ngComponentOutlet="button.icon"></ng-container>
+          {{button.text}}
+        </button>
+      }
+    </section>
+  </div>
+  <div class="containers-divisors-sections-aside-menu">
+    <div class="divisor-content"></div>
+    <section class="btns-section-container">
+      <!-- <button id="expand-collapse-asidemenu-btn" (click)="handleCollapsed()">
+        @if(collapsed){
+        <layout-sidebar-left-expand-icon></layout-sidebar-left-expand-icon>
+        } @else{
+        <layout-sidebar-left-collapse-icon></layout-sidebar-left-collapse-icon>
+        Colapsar
+        }
+      </button> -->
+      <button>
+        <settings-icon></settings-icon>  
+        Ajustes
+      </button>
+    </section>
+  </div>
+</aside>

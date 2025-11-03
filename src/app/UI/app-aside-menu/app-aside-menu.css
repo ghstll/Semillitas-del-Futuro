@@ -1,0 +1,55 @@
+:host{
+  height: 100%; width: 220px; max-width: 220px;
+}
+aside{
+  height: 100%; width: 100%;
+  padding: 20px;
+  display: flex; flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: width 0.5s;
+  color: white;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  
+}
+.containers-divisors-sections-aside-menu{
+  width: 100%;
+}
+button{
+  display: inline-flex; align-items: center;
+  left: 50%;
+  gap: 10px;
+  cursor: pointer;
+  padding: 3px;margin: 0;
+  background: none; border: none;
+  color: gray;
+  transition: background-color 0.5s,color 0.5s;
+  min-width: 90%; max-width: 90%;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+button:hover{
+  background-color: rgba(255, 255, 255, 0.164);
+  color: white;
+}
+header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.divisor-content{
+  margin-top: 30px;
+  width: 98%;
+  border: 1px solid rgb(73, 73, 73);  
+}
+.btns-section-container{
+  display: flex; flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+<div class="modal-bg" (click) = "cerrar()">
+  <div class="modal-content" (click) = "$event.stopPropagation()">
+    <header>
+      <h1>{{titulo}}</h1>
+    </header>
+    <ng-content></ng-content>
+  </div>
+</div>

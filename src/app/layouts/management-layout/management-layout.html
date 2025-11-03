@@ -1,0 +1,13 @@
+<div class="layout-container">
+  <app-aside-menu [buttons] = "asideMenuButtons"
+    (componentSelected) = "handleEventEmitCurrentComponent($event)"
+  >
+  </app-aside-menu>
+  <section class="section-main">
+    <app-header>
+    </app-header>
+    <ng-container *ngComponentOutlet="currentComponent">
+    
+    </ng-container>
+  </section>
+</div>

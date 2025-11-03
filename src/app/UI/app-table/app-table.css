@@ -1,0 +1,40 @@
+.main-container{
+  display: flex; flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%; width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+thead{
+  color: rgb(188, 187, 187);
+}
+th::first-letter{
+  text-transform: capitalize;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  text-transform: lowercase;
+  background-color: #f6f8fa;
+  font-weight:lighter;
+  border-left: 1px solid rgb(210, 210, 210);
+}
+table{
+  border:1px solid gray;
+  border-radius: 5px;
+  overflow: auto;
+}
+tr{
+  cursor: pointer;
+}
+tr:hover{
+  background-color: rgba(73, 73, 73, 0.104);
+}
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table-header{
+  position: fixed;
+}

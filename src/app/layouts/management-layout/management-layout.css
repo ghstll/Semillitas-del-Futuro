@@ -1,0 +1,9 @@
+.layout-container{
+  display: flex;
+  height: 100%; width: 100%;
+}
+.section-main{
+  display: flex; flex-direction: column;
+  height: 100%; width: 100%;
+  background-color: #1B263B;
+}

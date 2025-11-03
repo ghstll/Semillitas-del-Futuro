@@ -1,0 +1,36 @@
+header{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: white;
+  justify-content: end;
+}
+.header-title-container{
+  display: inline-flex;
+  gap: 40px;
+}
+.icon-container{
+  display: inline-flex; align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.155);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+button{
+  display: inline-flex; align-items: center;
+  gap: 10px;
+  color: white;
+  background: none;
+  border: 1px solid gray;
+  border: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+}
+button:hover{
+  background-color: #26334a;
+}
